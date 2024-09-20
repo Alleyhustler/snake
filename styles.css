@@ -1,0 +1,166 @@
+/* Custom background class */
+.custom-bg {
+    background-image: url('images/giphy.jpg'); /* Replace 'your-image.jpg' with the path to your background image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+    height: 100vh; /* Full viewport height */
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+body {
+    margin: 0;
+    font-family: 'Nunito', sans-serif; /* Apply Nunito font */
+    background-color: #F5F5DC; /* Soft Beige */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #000000; /* Warm Sand */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-left {
+    flex: 1;
+    font-weight: 600; /* Bolder for emphasis */
+}
+
+.header-center {
+    flex: 2;
+    text-align: center;
+}
+
+.header-center a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 600; /* Bolder for emphasis */
+}
+
+.header-right {
+    flex: 1;
+    text-align: right;
+}
+
+.header-right .social-icon {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.5em; /* Adjust size as needed */
+}
+
+.header-right .social-icon i {
+    vertical-align: middle;
+}
+
+.image-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.image-section img {
+    max-width: 300px; /* Adjust size as needed */
+    height: auto;
+    border-radius: 15px; /* Rounded corners */
+    border: 5px solid #000000; /* Border color matching Warm Sand */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.image-section img:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover */
+}
+
+.change-mediator-btn {
+    background-color: #000000; /* Soft Almond */
+    color: #ffffff;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-left: 20px;
+    font-family: 'Nunito', sans-serif; /* Consistent font */
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 10px;
+    padding: 20px;
+}
+
+.grid-item {
+    background-color: #FFFDD0; /* Cream */
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 8px; /* Rounded corners for grid items */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.grid-item img {
+    width: 100%; /* Make images responsive */
+    height: 100%;
+    object-fit: cover; /* Cover the grid item without distortion */
+}
+
+.video-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 60px); /* Full viewport height minus header height */
+    padding: 20px;
+    box-sizing: border-box; /* Include padding in the height calculation */
+}
+
+iframe {
+    width: 80vw; /* 80% of viewport width */
+    height: 45vw; /* Aspect ratio 16:9 */
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 15px; /* Optional: Rounded corners for the iframe */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Shadow for depth */
+}
+
+.floating-images {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Allow clicks to pass through */
+    overflow: hidden; /* Hide overflow to keep images within viewport */
+}
+
+.floating-images img {
+    position: absolute;
+    width: 50px; /* Small size */
+    height: 50px; /* Small size */
+    opacity: 0.7;
+    border-radius: 10px;
+    animation: float 10s infinite linear;
+}
+
+/* Keyframes for floating animation */
+@keyframes float {
+    0% {
+        transform: translateY(0) translateX(0) rotate(0);
+    }
+    50% {
+        transform: translateY(-100vh) translateX(100vw) rotate(360deg);
+    }
+    100% {
+        transform: translateY(0) translateX(0) rotate(720deg);
+    }
+}
